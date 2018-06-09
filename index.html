@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>The Gourmet</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=GFS+Didot|Great+Vibes|Open+Sans:300,400,700|Roboto:100" rel="stylesheet">
+	<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
+</head>
+<body>
+	<!-- HEADER STARTS -->
+	<header>
+		<!-- Humberger menu activates at max-width 768px -->
+		<div class="humburger-menu">
+			<p><i class="fa fa-bars"></i></p>
+		</div>
+		<div class="wrapper flexContainer">
+		    <div class="flexItem">
+		    	<img src="assets/genuine.png" alt="Genuine logo">
+		    </div>
+		    <div class="flexItem">
+		    	<img src="assets/foodpassion.png" alt="Food Passion logo">
+		    </div>
+		    <div class="flexItem">
+		    	<img src="assets/cookingsince.png" alt="Cooking since logo">
+		    </div>
+		    <div class="flexItem">
+		    	<!-- Click to open Modal -->
+		    	<button id="openBtn"><img src="assets/eye.png" class="eye" alt="Eye logo to view details"><span>View Details</span></button>
+		    </div>
+		</div>
+		<!-- Modal pops when View Details clicked 
+		 Can be closed using Wsc key or X -->
+		<div class="modal" id="modal">
+			<div class="modal-container">
+				<div class="modal-header clearfix">
+					<i id="closeBtn" class="fas fa-times"></i>
+					<h2>The Gourmet</h2>
+				</div>
+				<div class="modal-main">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil ipsum, consequatur laborum minima incidunt sed!</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, laudantium eum odio porro nostrum, expedita.</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ea dolore consequatur, eius explicabo non.</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, esse necessitatibus. Voluptates quo asperiores cumque.</p>
+				</div>
+			</div>
+		</div>
+		<div class="sidebar" id="sidebar">
+			<img src="assets/logo.png" class="logo" alt="The Gourmet logo, with spoons">
+			<nav>
+				<ul>
+					<li><i class="fas fa-angle-right"></i><a href="#">Home</a></li>
+					<li><i class="fas fa-angle-right"></i><a href="#">Services</a></li>
+					<li><i class="fas fa-angle-right"></i><a href="#">Projects</a></li>
+					<li><i class="fas fa-angle-right"></i><a href="#">About me</a></li>
+					<li><i class="fas fa-angle-right"></i><a href="#">Blog</a></li>
+					<li><i class="fas fa-angle-right"></i><a href="#">Contacts</a></li>
+				</ul>
+			</nav>
+			<div class="twitter-feed">
+				<i class="fab fa-twitter twitter-icon"></i>
+				<p><span class="designer">@louisdesign</span> Check out Marine Theme</p>
+				<p><span class="wrap">http://themeforest.net/user/louisdesign/portfolio</span></p>
+				<p><span class="time">12 minutes ago</span></p>
+			</div>
+			<div class="nav-footer">
+				<a href="http://facebook.com"><i class="fab fa-facebook-f"></i></a>
+				<a href="http://twitter.com"><i class="fab fa-twitter"></i></a>
+				<a href="http://skype.com"><i class="fab fa-skype"></i></a>
+				<div class="copyright">
+					<p>&copy; 2014 The Gourmet.</p>
+					<p>All Rights Reserved</p>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- HEADER ENDS -->
+	<!-- MAIN STARTS -->
+	<main>
+		<section class="gallery">
+			<div class="wrapper">
+				<h2><span class="first">our</span> gallery</h2>
+				<p class="section-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse voluptatum consectetur iusto labore. Eveniet non tempora dolor, praesentium consectetur tempore accusantium minima maiores, vel repellat ipsum.</p>
+				<div class="tabs clearfix wrapper">
+					<div class="tab-item" id="all-tab">
+						<p>All</p>
+					</div>
+					<div class="tab-item" id="meat-tab">
+						<p>Meat</p>
+					</div>
+					<div class="tab-item" id="fish-tab">
+						<p>Fish</p>
+					</div>
+					<div class="tab-item" id="dessert-tab">
+						<p>Dessert</p>
+					</div>
+					<div class="tab-item tab-item-last" id="veg-tab">
+						<p>Vegetarian</p>
+					</div>
+				</div>
+			</div>
+			<!-- Filtered Gallery -->
+			<div class="gallery-container clearfix">
+				<div class="galleryItem" data-category="veg">
+					<img src="assets/salad.jpg" alt="Salad">
+					<div class="overlay">
+						<p class="item-name">Salad</p>
+						<p class="price">$5</p>
+					</div>
+				</div>
+				<div class="galleryItem" data-category="veg">
+					<img src="assets/pasta.jpg" alt="Pasta with pesto sauce">
+					<div class="overlay">
+						<p class="item-name">Pasta</p>
+						<p class="price">$6.99</p>
+					</div>
+				</div>
+				<div class="galleryItem" data-category="meat">
+					<img src="assets/hero.jpg" alt="humburger with fries" >
+					<div class="overlay">
+						<p class="item-name">Burger</p>
+						<p class="price">$5</p>
+					</div>
+				</div>
+				<div class="galleryItem" data-category="veg">
+					<img src="assets/cracker_fries.jpg" alt="Cracker and fries">
+					<div class="overlay">
+						<p class="item-name">Fries</p>
+						<p class="price">$4</p>
+					</div>
+				</div>
+				<div class="galleryItem" data-category="meat">
+					<img src="assets/hot_dog.jpg" alt="Chilli hot dog">
+					<div class="overlay">
+						<p class="item-name">Hot Dog</p>
+						<p class="price">$5.50</p>
+					</div>
+				</div>
+				<div class="galleryItem" data-category="meat">
+					<img src="assets/fried_chicken.jpg" alt="Fried chicken">
+					<div class="overlay">
+						<p class="item-name">Fried Chicken</p>
+						<p class="price">$8.99</p>
+					</div>
+				</div>
+				<div class="galleryItem" data-category="fish">
+					<img src="assets/meal.jpg" alt="Combo meal">
+					<div class="overlay">
+						<p class="item-name">Meal Combo</p>
+						<p class="price">$22.99</p>
+					</div>
+				</div>
+				<div class="galleryItem" data-category="dessert">
+					<img src="assets/breakfast_bowl.jpg" alt="Breakfast bowl with fruits">
+					<div class="overlay">
+						<p class="item-name">Breakfast Bowl</p>
+						<p class="price">$5.99</p>
+					</div>
+				</div>
+				<div class="galleryItem" data-category="veg">
+					<img src="assets/nachos.jpg" alt="Cheese nachos with salsa and guacamole">
+					<div class="overlay">
+						<p class="item-name">Nachos</p>
+						<p class="price">$5</p>
+					</div>
+				</div>
+				<div class="galleryItem" data-category="veg">
+					<img src="assets/pizzza.jpg" alt="Cheese pizza">
+					<div class="overlay">
+						<p class="item-name">Pizza</p>
+						<p class="price">$10</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="services">
+			<div class="wrapper">
+				<h2><span class="first">our</span> services</h2>
+				<p class="section-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse voluptatum consectetur iusto labore. Eveniet non tempora dolor, praesentium consectetur tempore accusantium minima maiores, vel repellat ipsum.</p>
+			</div>
+			<div class="services-wrapper">
+				<div class="services-item">
+					<img src="assets/coffee.png" alt="coffee logo used to indicate breakfast service">
+					<h3>Breakfast</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto iste, tenetur!</p>
+				</div>
+				<div class="services-item">
+					<img src="assets/chinesefood.png" alt="chinese takeaway logo used to indicate lunch service">
+					<h3>Lunch</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto iste, tenetur!</p>
+				</div>
+				<div class="services-item">
+					<img src="assets/pasta.png" alt="bowl of pasta logo used to indicate dinner service">
+					<h3>Dinner</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto iste, tenetur!</p>
+				</div>
+				<div class="services-item">
+					<img src="assets/plate.png" alt="plate with knife and folk logo used to indicate custom meal service">
+					<h3>Custom</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto iste, tenetur!</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="menu">
+			<div class="wrapper">
+				<h2><span class="first">our</span> breakfast</h2>
+			</div>
+			<div class="menu-wrapper">
+				<div class="half-menu">
+					<div class="menu-item">
+						<h3>soft-boiled organic egg</h3>
+						<p><span class="menu-item-price">with "soldiers"<span class="menu-spacing">..................................................</span> 5.00</span></p>
+					</div>
+					<div class="menu-item">
+						<h3>eggs any style</h3>
+						<p><span class="menu-item-price">with homefries and toast<span class="menu-spacing">...................................</span> 16.00</span></p>
+					</div>
+					<div class="menu-item">
+						<h3>scrambled eggs in puff pastry</h3>
+						<p><span class="menu-item-price">with wild mashrooms and asparagus<span class="menu-spacing">...................</span> 22.00</span></p>
+					</div>
+					<div class="menu-item">
+						<h3>eggs benedict</h3>
+						<p><span class="menu-item-price">with homefries<span class="menu-spacing">..................................................</span> 22.00</span></p>
+					</div>
+					<div class="menu-item">
+						<h3>eggs norwegian</h3>
+						<p><span class="menu-item-price">poached eggs with smoked salmon<span class="menu-spacing">......................</span> 23.00</span></p>
+					</div>
+				</div>
+
+				<div class="half-menu">
+					<div class="menu-item">
+						<h3>soft-boiled organic egg</h3>
+						<p><span class="menu-item-price">with "soldiers"<span class="menu-spacing">..................................................</span> 5.00</span></p>
+					</div>
+					<div class="menu-item">
+						<h3>eggs any style</h3>
+						<p><span class="menu-item-price">with homefries and toast<span class="menu-spacing">...................................</span> 16.00</span></p>
+					</div>
+					<div class="menu-item">
+						<h3>scrambled eggs in puff pastry</h3>
+						<p><span class="menu-item-price">with wild mashrooms and asparagus<span class="menu-spacing">...................</span> 22.00</span></p>
+					</div>
+					<div class="menu-item">
+						<h3>eggs benedict</h3>
+						<p><span class="menu-item-price">with homefries<span class="menu-spacing">..................................................</span> 22.00</span></p>
+					</div>
+					<div class="menu-item">
+						<h3>eggs norwegian</h3>
+						<p><span class="menu-item-price">poached eggs with smoked salmon<span class="menu-spacing">......................</span> 23.00</span></p>
+					</div>
+				</div>
+			</div>
+			<button><img src="assets/eye.png" class="eye" alt="Eye logo to view details"><span>View Details</span></button>
+		</section>
+	</main>
+	<!-- MAIN ENDS -->
+	<!-- FOOTER STARTS -->
+	<footer>
+		<div class="footer-upper"><img src="assets/mapmarker.png"></div>
+		<div class="footer-lower">
+			<div class="footer-item footer-align">
+				<img src="assets/logo2.png" class="footer-logo" alt="The Gourmet logo, with spoons">
+				<div class="footer-social">
+					<a href="http://facebook.com"><i class="fab fa-facebook-f"></i></a>
+					<a href="http://twitter.com"><i class="fab fa-twitter"></i></a>
+					<a href="http://skype.com"><i class="fab fa-skype"></i></a>
+					<a href="http://googleplus.com"><i class="fab fa-google-plus-g"></i></a>
+					<a href="http://linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+					<a href="http://instagram.com"><i class="fab fa-instagram"></i></a>
+				</div>
+			</div>
+			<div class="footer-item footer-form">
+				<h2><span class="first">Contact</span> Us</h2>
+				<form method="POST" name="loginForm" action="">
+					<input type="text" name="name" placeholder="Name*" id="name">
+					<input type="email" name="email" placeholder="E-mail*" id="emailAddress">
+					<textarea name="message" cols="30" rows="6" placeholder="Message"></textarea>
+					<input type="submit" value="SEND MESSAGE">
+				</form>
+			</div>
+			<div class="footer-item">
+				<div class="location">
+					<img src="assets/locationicon.png">
+					<div>
+						<p>The Gourmet.</p>
+						<p>PO Box 21177</p>
+						<p>Little Lionsdale St, Melbourne</p>
+						<p>Victoria 8011 Australia</p>
+					</div>
+				</div>
+				<div class="location">
+					<img src="assets/mobile.png">
+					<div>
+						<p>Phone: (415) 124-5678</p>
+						<p>Fax: (415) 124-5678</p>
+					</div>
+				</div>
+				<div class="location">
+					<img src="assets/mail2.png">
+					<div>
+						<p>support@yourname.com</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- FOOTER ENDS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+	<script>
+		 $(function() {
+        // $('.gallery-container').flickity({
+        // 	cellAlign: 'left',
+        // 	contain: true,
+        // 	freeScroll: true,
+        // 	groupCells: true
+        // });
+        $('.fa-bars').on('click', function(){
+        	let menu = document.getElementById('sidebar');
+        	if(menu.className === 'sidebar'){
+        		menu.className += ' responsive' ;
+        	}
+        	else{
+        		menu.className = 'sidebar';
+        	}
+        });
+        let modal = document.querySelector('#modal');
+        $('#openBtn').on('click', function(){
+        	modal.style.display	= 'block';
+        });
+        $('#closeBtn').on('click', function(){
+        	modal.style.display	= 'none';
+        });
+        $(document).keydown(function(e) { 
+            if (e.keyCode == 27 || e.keyCode == 88) { 
+                modal.style.display	= 'none';
+            } 
+        });
+
+        const allfilter = document.querySelectorAll('.galleryItem');
+                      
+        $('#all-tab').on('click', function(){
+    		for(let i = 0; i < allfilter.length; i++){	
+	    		$(allfilter[i]).removeClass('closed');
+    		}    		
+        });
+
+        $('#meat-tab').on('click', function(){
+        	const meatfilter = document.querySelectorAll('[data-category="meat"]');
+    		filtering(meatfilter);
+        });
+
+        $('#fish-tab').on('click', function(){
+        	const fishfilter = document.querySelectorAll('[data-category="fish"]');
+        	filtering(fishfilter); 		
+        });
+
+        $('#dessert-tab').on('click', function(){
+        	const dessertfilter = document.querySelectorAll('[data-category="dessert"]');
+        	filtering(dessertfilter);	
+        });
+
+		$('#veg-tab').on('click', function(){
+			const vegfilter = document.querySelectorAll('[data-category="veg"]');
+        	filtering(vegfilter);   		
+        });        
+
+        const filtering = (filter) =>{
+        	for(let i = 0; i < allfilter.length; i++){	
+	    		allfilter[i].className += ' closed';
+    		}    		
+    		for(let i = 0; i < filter.length; i++){	
+    			$(filter[i]).removeClass('closed');
+    		}
+        }
+
+    });
+	</script>
+</body>
+</html>
