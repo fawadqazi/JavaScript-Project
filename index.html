@@ -1,3 +1,11 @@
+<!-- 1. In the header when clicked on View Details, Modal pops up. It can be closed by pressing X key or Esc key 
+	as well as by clicking on the close button.
+	2.The gallery for the menu is filtered. You can click on any of the dishes and it gets added to the invoice below. 
+	It has a limitation, if you click on the text of the dish it doesn't get added to the invoice. Click anywhere
+	on the overlay except the text :) How to fetch the name and price if clicked on the text ?
+	3.The invoice keeps track of the subtotal, the HST and the final total as well.   
+	4.The invoice can delete items and the subtotal, HST and total updates accordingly-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +14,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=GFS+Didot|Great+Vibes|Open+Sans:300,400,700|Roboto:100" rel="stylesheet">
-	<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
 </head>
 <body>
@@ -36,7 +43,7 @@
 		<div class="modal" id="modal">
 			<div class="modal-container">
 				<div class="modal-header clearfix">
-					<i id="closeBtn" class="fas fa-times"></i>
+					<i id="closeBtn" class="fas fa-times modalclose"></i>
 					<h2>The Gourmet</h2>
 				</div>
 				<div class="modal-main">
@@ -52,8 +59,8 @@
 			<nav>
 				<ul>
 					<li><i class="fas fa-angle-right"></i><a href="#">Home</a></li>
-					<li><i class="fas fa-angle-right"></i><a href="#">Services</a></li>
-					<li><i class="fas fa-angle-right"></i><a href="#">Projects</a></li>
+					<li><i class="fas fa-angle-right"></i><a href="#menu">Menu</a></li>
+					<li><i class="fas fa-angle-right"></i><a href="#invoice">Invoice</a></li>
 					<li><i class="fas fa-angle-right"></i><a href="#">About me</a></li>
 					<li><i class="fas fa-angle-right"></i><a href="#">Blog</a></li>
 					<li><i class="fas fa-angle-right"></i><a href="#">Contacts</a></li>
@@ -79,9 +86,9 @@
 	<!-- HEADER ENDS -->
 	<!-- MAIN STARTS -->
 	<main>
-		<section class="gallery">
+		<section id="menu" class="gallery">
 			<div class="wrapper">
-				<h2><span class="first">our</span> gallery</h2>
+				<h2><span class="first">our</span> menu</h2>
 				<p class="section-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse voluptatum consectetur iusto labore. Eveniet non tempora dolor, praesentium consectetur tempore accusantium minima maiores, vel repellat ipsum.</p>
 				<div class="tabs clearfix wrapper">
 					<div class="tab-item" id="all-tab">
@@ -175,212 +182,38 @@
 				</div>
 			</div>
 		</section>
-
-		<section class="services">
+		<section id="invoice" class="services">
 			<div class="wrapper">
-				<h2><span class="first">our</span> services</h2>
-				<p class="section-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse voluptatum consectetur iusto labore. Eveniet non tempora dolor, praesentium consectetur tempore accusantium minima maiores, vel repellat ipsum.</p>
+				<h2><span class="first">your</span> order</h2>
+				<ul class="order">
+					<li class="invoiceSubTotal"><span class='left'>Subtotal</span><span id="subtotalBill" class="right"></span></li>	
+					<li class="invoiceTax"><span class='left'>HST</span><span id="totalTax" class="right"></span></li>
+					<li class="invoiceTotal"><span class='left'>Total</span><span id="totalBill" class="right"></span></li>
+				</ul>
 			</div>
 			<div class="services-wrapper">
 				<div class="services-item">
 					<img src="assets/coffee.png" alt="coffee logo used to indicate breakfast service">
 					<h3>Breakfast</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto iste, tenetur!</p>
 				</div>
 				<div class="services-item">
 					<img src="assets/chinesefood.png" alt="chinese takeaway logo used to indicate lunch service">
-					<h3>Lunch</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto iste, tenetur!</p>
+					<h3>Lunch</h3>					
 				</div>
 				<div class="services-item">
 					<img src="assets/pasta.png" alt="bowl of pasta logo used to indicate dinner service">
-					<h3>Dinner</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto iste, tenetur!</p>
+					<h3>Dinner</h3>					
 				</div>
 				<div class="services-item">
 					<img src="assets/plate.png" alt="plate with knife and folk logo used to indicate custom meal service">
-					<h3>Custom</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto iste, tenetur!</p>
+					<h3>Custom</h3>					
 				</div>
 			</div>
-		</section>
-
-		<section class="menu">
-			<div class="wrapper">
-				<h2><span class="first">our</span> breakfast</h2>
-			</div>
-			<div class="menu-wrapper">
-				<div class="half-menu">
-					<div class="menu-item">
-						<h3>soft-boiled organic egg</h3>
-						<p><span class="menu-item-price">with "soldiers"<span class="menu-spacing">..................................................</span> 5.00</span></p>
-					</div>
-					<div class="menu-item">
-						<h3>eggs any style</h3>
-						<p><span class="menu-item-price">with homefries and toast<span class="menu-spacing">...................................</span> 16.00</span></p>
-					</div>
-					<div class="menu-item">
-						<h3>scrambled eggs in puff pastry</h3>
-						<p><span class="menu-item-price">with wild mashrooms and asparagus<span class="menu-spacing">...................</span> 22.00</span></p>
-					</div>
-					<div class="menu-item">
-						<h3>eggs benedict</h3>
-						<p><span class="menu-item-price">with homefries<span class="menu-spacing">..................................................</span> 22.00</span></p>
-					</div>
-					<div class="menu-item">
-						<h3>eggs norwegian</h3>
-						<p><span class="menu-item-price">poached eggs with smoked salmon<span class="menu-spacing">......................</span> 23.00</span></p>
-					</div>
-				</div>
-
-				<div class="half-menu">
-					<div class="menu-item">
-						<h3>soft-boiled organic egg</h3>
-						<p><span class="menu-item-price">with "soldiers"<span class="menu-spacing">..................................................</span> 5.00</span></p>
-					</div>
-					<div class="menu-item">
-						<h3>eggs any style</h3>
-						<p><span class="menu-item-price">with homefries and toast<span class="menu-spacing">...................................</span> 16.00</span></p>
-					</div>
-					<div class="menu-item">
-						<h3>scrambled eggs in puff pastry</h3>
-						<p><span class="menu-item-price">with wild mashrooms and asparagus<span class="menu-spacing">...................</span> 22.00</span></p>
-					</div>
-					<div class="menu-item">
-						<h3>eggs benedict</h3>
-						<p><span class="menu-item-price">with homefries<span class="menu-spacing">..................................................</span> 22.00</span></p>
-					</div>
-					<div class="menu-item">
-						<h3>eggs norwegian</h3>
-						<p><span class="menu-item-price">poached eggs with smoked salmon<span class="menu-spacing">......................</span> 23.00</span></p>
-					</div>
-				</div>
-			</div>
-			<button><img src="assets/eye.png" class="eye" alt="Eye logo to view details"><span>View Details</span></button>
 		</section>
 	</main>
 	<!-- MAIN ENDS -->
-	<!-- FOOTER STARTS -->
-	<footer>
-		<div class="footer-upper"><img src="assets/mapmarker.png"></div>
-		<div class="footer-lower">
-			<div class="footer-item footer-align">
-				<img src="assets/logo2.png" class="footer-logo" alt="The Gourmet logo, with spoons">
-				<div class="footer-social">
-					<a href="http://facebook.com"><i class="fab fa-facebook-f"></i></a>
-					<a href="http://twitter.com"><i class="fab fa-twitter"></i></a>
-					<a href="http://skype.com"><i class="fab fa-skype"></i></a>
-					<a href="http://googleplus.com"><i class="fab fa-google-plus-g"></i></a>
-					<a href="http://linkedin.com"><i class="fab fa-linkedin-in"></i></a>
-					<a href="http://instagram.com"><i class="fab fa-instagram"></i></a>
-				</div>
-			</div>
-			<div class="footer-item footer-form">
-				<h2><span class="first">Contact</span> Us</h2>
-				<form method="POST" name="loginForm" action="">
-					<input type="text" name="name" placeholder="Name*" id="name">
-					<input type="email" name="email" placeholder="E-mail*" id="emailAddress">
-					<textarea name="message" cols="30" rows="6" placeholder="Message"></textarea>
-					<input type="submit" value="SEND MESSAGE">
-				</form>
-			</div>
-			<div class="footer-item">
-				<div class="location">
-					<img src="assets/locationicon.png">
-					<div>
-						<p>The Gourmet.</p>
-						<p>PO Box 21177</p>
-						<p>Little Lionsdale St, Melbourne</p>
-						<p>Victoria 8011 Australia</p>
-					</div>
-				</div>
-				<div class="location">
-					<img src="assets/mobile.png">
-					<div>
-						<p>Phone: (415) 124-5678</p>
-						<p>Fax: (415) 124-5678</p>
-					</div>
-				</div>
-				<div class="location">
-					<img src="assets/mail2.png">
-					<div>
-						<p>support@yourname.com</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<!-- FOOTER ENDS -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-	<script>
-		 $(function() {
-        // $('.gallery-container').flickity({
-        // 	cellAlign: 'left',
-        // 	contain: true,
-        // 	freeScroll: true,
-        // 	groupCells: true
-        // });
-        $('.fa-bars').on('click', function(){
-        	let menu = document.getElementById('sidebar');
-        	if(menu.className === 'sidebar'){
-        		menu.className += ' responsive' ;
-        	}
-        	else{
-        		menu.className = 'sidebar';
-        	}
-        });
-        let modal = document.querySelector('#modal');
-        $('#openBtn').on('click', function(){
-        	modal.style.display	= 'block';
-        });
-        $('#closeBtn').on('click', function(){
-        	modal.style.display	= 'none';
-        });
-        $(document).keydown(function(e) { 
-            if (e.keyCode == 27 || e.keyCode == 88) { 
-                modal.style.display	= 'none';
-            } 
-        });
-
-        const allfilter = document.querySelectorAll('.galleryItem');
-                      
-        $('#all-tab').on('click', function(){
-    		for(let i = 0; i < allfilter.length; i++){	
-	    		$(allfilter[i]).removeClass('closed');
-    		}    		
-        });
-
-        $('#meat-tab').on('click', function(){
-        	const meatfilter = document.querySelectorAll('[data-category="meat"]');
-    		filtering(meatfilter);
-        });
-
-        $('#fish-tab').on('click', function(){
-        	const fishfilter = document.querySelectorAll('[data-category="fish"]');
-        	filtering(fishfilter); 		
-        });
-
-        $('#dessert-tab').on('click', function(){
-        	const dessertfilter = document.querySelectorAll('[data-category="dessert"]');
-        	filtering(dessertfilter);	
-        });
-
-		$('#veg-tab').on('click', function(){
-			const vegfilter = document.querySelectorAll('[data-category="veg"]');
-        	filtering(vegfilter);   		
-        });        
-
-        const filtering = (filter) =>{
-        	for(let i = 0; i < allfilter.length; i++){	
-	    		allfilter[i].className += ' closed';
-    		}    		
-    		for(let i = 0; i < filter.length; i++){	
-    			$(filter[i]).removeClass('closed');
-    		}
-        }
-
-    });
-	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.2.0/jquery.smooth-scroll.min.js"></script>
+	<script src="scripts/script.js"></script>
 </body>
 </html>
